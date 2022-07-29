@@ -18,18 +18,19 @@ function handleToDoSumbit(event) {
   paintToDo(newToDoObj);
   saveToDos();
 }
-
 function paintToDo(newToDoObj) {
   const li = document.createElement("li");
   li.id = newToDoObj.id;
   const span = document.createElement("span");
-  const btn = document.createElement("button");
+  const btn = document.createElement("span");
 
   span.innerText = newToDoObj.text;
-  btn.innerText = "❌";
+  btn.className = "material-symbols-outlined";
+  btn.innerText = "check_circle";
+  btn.classList.add("todo-list__button");
   btn.addEventListener("click", deleteToDo);
-  li.appendChild(span);
   li.appendChild(btn);
+  li.appendChild(span);
   toDoList.appendChild(li);
 }
 
@@ -48,7 +49,6 @@ function saveToDos() {
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
 toDoForm.addEventListener("submit", handleToDoSumbit);
-
 if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos);
 
