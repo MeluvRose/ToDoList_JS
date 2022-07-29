@@ -20,16 +20,31 @@
   text-align: center;
 }
 
-#todo-list {
+.todo-navigation {
   background-color: rgba(131, 131, 131, 0.856);
   border: 1px gray solid;
   border-radius: 20px;
+  height: 35vh;
+  margin-top: 40px;
+}
+
+#todo-list {
   padding: 0px 20px;
-  height: 40vh;
+  margin: 0;
+  height: 25vh;
   list-style: none;
   overflow-y: scroll;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+.todo-list__title {
+  position: sticky;
+  display: block;
+  width: inherit;
+  text-align: center;
+  font-size: 32px;
+  margin: 20px 0 30px 0;
 }
 
 #todo-list::-webkit-scrollbar {
