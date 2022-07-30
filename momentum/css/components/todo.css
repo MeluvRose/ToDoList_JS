@@ -24,8 +24,9 @@
   background-color: rgba(131, 131, 131, 0.856);
   border: 1px gray solid;
   border-radius: 20px;
+  width: 75vw;
   height: 35vh;
-  margin-top: 40px;
+  margin: 1vh 10vw;
 }
 
 #todo-list {
@@ -38,7 +39,7 @@
   scrollbar-width: none; /* Firefox */
 }
 
-.todo-list__title {
+.todo-navigation__title {
   position: sticky;
   display: block;
   width: inherit;
@@ -70,4 +71,13 @@
 
 .todo-list__button:hover {
   color: rgba(13, 211, 40, 0.918);
+}
+
+@media screen and (max-width: 541px) {
+  #todo-form input {
+    width: 250px;
+  }
+  #todo-list {
+    font-size: 18px;
+  }
 }

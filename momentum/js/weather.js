@@ -5,16 +5,19 @@ function onGeoCool(position) {
   const lon = position.coords.longitude;
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
 
+  document.getElementById("weather").classList.remove("hidden");
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      const city = document.querySelector("#weather span:first-child");
-      const weather = document.querySelector("#weather span:last-child");
-      const icon = document.querySelector("#weather img");
+      const widget = document.querySelector("#weather");
+      const city = widget.querySelector("span:first-child");
+      const weather = widget.querySelector("span:last-child");
+      const icon = document.createElement("img");
 
       city.innerText = `${data.name}, ${data.sys.country}`;
       weather.innerText = `${data.weather[0].main} (${data.main.temp}˚C)`;
       icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+      widget.appendChild(icon);
     });
 }
 function onGeoError() {

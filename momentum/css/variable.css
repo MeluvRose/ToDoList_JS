@@ -1,4 +1,5 @@
 :root {
+  --font-shadow: 1px 1px 2px gray;
   --invisible: rgba(219, 218, 218, 0);
-  --bottom-border: 1px solid aliceblue;
+  --bottom-border: 5px solid aliceblue;
 }

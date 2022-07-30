@@ -22,8 +22,8 @@ function paintGreetings(username) {
 
 function relocateElement() {
   document.querySelector("#todo-form").classList.remove(HIDDEN_CLASSNAME);
-  document.querySelector("#todo-list").classList.remove(HIDDEN_CLASSNAME);
-  document.querySelector("#clock").style.marginTop = "10vh";
+  document.querySelector(".todo-navigation").classList.remove(HIDDEN_CLASSNAME);
+  document.querySelector("#clock").style.marginTop = "15vh";
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
